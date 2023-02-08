@@ -1,12 +1,12 @@
 // Assignment Code
-let generateBtn = document.querySelector("#generate");
-let password = document.querySelector("#password");
+const generateBtn = document.querySelector("#generate");
+const password = document.querySelector("#password");
 
 let uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
 let specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-let optionsVariable = "";
+let VariableOptions = "";
 
 // Write password to the #password input
 function writePassword() {
@@ -14,7 +14,7 @@ function writePassword() {
     event.preventDefault();
 
     password.value === "";
-    let randomString = "";
+    let randomGenerator = "";
 
     var uppercasetwo = confirm("Do you want your password to contain uppercase letters?");
     var lowercasetwo = confirm("Do you want your password to contain lowercase letters?");
@@ -36,25 +36,25 @@ function writePassword() {
     }
 
     if (uppercasetwo) {
-        optionsVariable += uppercaseLetters;
+        VariableOptions += uppercaseLetters;
     }
 
     if (lowercasetwo) {
-        optionsVariable += lowercaseLetters;
+        VariableOptions += lowercaseLetters;
     }
 
     if (numberstwo) {
-        optionsVariable += numbers;
+        VariableOptions += numbers;
     }
 
     if (specialCharacterstwo) {
-        optionsVariable += specialCharacters;
+        VariableOptions += specialCharacters;
     }
 
     for (let i = 0; i < passwordLength; i++) {
-        randomString += optionsVariable.charAt(Math.floor(Math.random() * optionsVariable.length));
+        randomGenerator += VariableOptions.charAt(Math.floor(Math.random() * VariableOptions.length));
     }
-    password.value = randomString;
+    password.value = randomGenerator;
 
 }
 
